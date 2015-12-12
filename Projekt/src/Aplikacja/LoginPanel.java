@@ -15,27 +15,27 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
  
 public class LoginPanel extends JPanel {
-    private JTextField PoleNazwa; //pole na nazwê
-    private JPasswordField PoleHaslo; //pole na has³o
+    private JTextField PoleNazwa; //pole na nazwï¿½
+    private JPasswordField PoleHaslo; //pole na hasï¿½o
     private JButton PrzyciskZaloguj; //przycisk logowania
-    private LoginListener listener; //s³uchacz przycisku
+    private LoginListener listener; //sï¿½uchacz przycisku
  
     /**
-     * @return wprowadzona nazwa u¿ytkownika
+     * @return wprowadzona nazwa uï¿½ytkownika
      */
     public String getName() {
         return PoleNazwa.getText();
     }
     /**
-     * @return wprowadzone przez u¿ytkownika has³o
+     * @return wprowadzone przez uï¿½ytkownika hasï¿½o
      */
     public String getPassword() {
-        String haslo = "";
+        String password = "";
         char[] pass = PoleHaslo.getPassword();
         for(int i=0; i<pass.length; i++) {
-            haslo += pass[i];
+        	password += pass[i];
         }
-        return haslo;
+        return password;
     }
  
     public LoginPanel(LoginListener listener) {
@@ -53,12 +53,12 @@ public class LoginPanel extends JPanel {
     }
  
     /**
-     * Metoda, która tworzy etykiety i pola do wprowadzania danych.
+     * Metoda, ktï¿½ra tworzy etykiety i pola do wprowadzania danych.
      */
     private void createComponents() {
-    	JLabel opis= new JLabel("<html>Proszê siê zalogowaæ, aby przejœæ dalej! </html>");
+    	JLabel opis= new JLabel("<html>Proszï¿½ siï¿½ zalogowaï¿½, aby przejï¿½ï¿½ dalej! </html>");
         JLabel login = new JLabel("<html>Login:</html>");
-        JLabel haslo = new JLabel("Has³o: ");
+        JLabel haslo = new JLabel("Hasï¿½o: ");
         PoleNazwa = new JTextField();
         PoleHaslo = new JPasswordField();
  
@@ -74,13 +74,13 @@ public class LoginPanel extends JPanel {
         PrzyciskZaloguj = new JButton("Zaloguj");
         PrzyciskZaloguj.addActionListener(listener);
  
-        //pomocniczy panel do wyœrodkowania elementów
+        //pomocniczy panel do wyï¿½rodkowania elementï¿½w
         JPanel parentPanel = new JPanel();
         parentPanel.setLayout(new BorderLayout());
         parentPanel.add(inputPanel, BorderLayout.CENTER);
         parentPanel.add(PrzyciskZaloguj, BorderLayout.SOUTH);
  
-        // dodajemy do g³ównego panelu
+        // dodajemy do gï¿½ï¿½wnego panelu
         this.add(parentPanel);
     }
 }
